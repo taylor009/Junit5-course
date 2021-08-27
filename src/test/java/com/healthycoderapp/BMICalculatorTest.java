@@ -1,5 +1,7 @@
 package com.healthycoderapp;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
@@ -9,6 +11,18 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BMICalculatorTest {
+
+    @BeforeAll
+    static void beforeAll() {
+        // Must be static also performs operations that should be performed exactly once before all unit tests.
+        System.out.println("Before all unit tests.");
+    }
+
+    @AfterAll
+    static void afterAll() {
+        // exact opposite of beforeAll
+        System.out.println("After all unit tests.");
+    }
 
     @Test
     void should_ReturnTrue_When_DietRecommended() {
